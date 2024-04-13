@@ -77,7 +77,7 @@
 		<prompt>
 		  Here a recording is made of pressing questions <break/>
 		</prompt>
-		<goto next="#efarmerMenu" />
+        <goto next="record.xml"/>
 	</block>
    </form>
 
@@ -153,7 +153,7 @@
 		<prompt>
 		  Here a recording is made of pressing questions <break/>
 		</prompt>
-		<goto next="#ffarmerMenu" />
+        <goto next="record.xml"/>
 	</block>
    </form>
    <form id="fSales">
