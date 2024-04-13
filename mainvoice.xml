@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+   <menu id="languageChoice" dtmf="true">
+      <prompt xml:lang="fr-fr">
+          Bonjour, world!
+      </prompt>
+      <prompt xml:lang="fr-fr">
+         Veuillez choisir votre langue : Appuyez 1 pour l'anglais ou 2 pour le français.
+      </prompt>
+      <prompt>
+         Please choose your language: Press 1 for English or 2 for French.
+      </prompt>
+        <choice next="#englishPrompt"/>
+	<choice next="#frenchPrompt"/>
+    </menu>
+	
+   <!-- English Prompt Block -->
+   <menu id="englishPrompt" dtmf="true">
+      	<prompt>
+		You've entered the English menu. For providing farmers input or receiving farmers information, press 1. For receiving sales information, press 2
+        </prompt>
+	    <choice next="#efarmerMenu"/>
+	    <choice next="#eSalesForm"/>
+   </menu>
+
+   <form id="eSalesForm">
+	<block> 
+		<prompt>
+		   here an audio should be played with information about the sales <break/>
+		</prompt>
+		<goto next="#englishPrompt" />
+	</block>
+   </form>
+
+   <menu id="efarmerMenu" dtmf="true">
+	<prompt>
+	   This is the farmers menu providing different types of information. Press 1 for weather information, press 2 for general farming information, press 3 for answers and tips to last weeks questions, press 4 for asking a farmers question, press 5 for submitting sales information. Press 6 to return to the previous menu.
+        </prompt>
+	<choice next="#eWeather"/>
+	<choice next="#eGeneral"/>
+	<choice next="#eAnswers"/>
+	<choice next="#eQuestions"/>
+	<choice next="#eSales"/>
+	<choice next="#englishPrompt"/>
+    </menu>
+
+
+   <form id="eWeather">
+	<block> 
+		<prompt>
+		This is information about the weather <break/>
+		</prompt>
+		<goto next="#efarmerMenu" />
+	</block>
+   </form>
+
+   <form id="eGeneral">
+	<block> 
+		<prompt>
+		  this should be a menu with categorized general information <break/>
+		</prompt>
+		<goto next="#efarmerMenu" />
+	</block>
+   </form>
+
+   <form id="eAnswers">
+	<block> 
+		<prompt>
+		  Here a recording should be played of answers to previous questions <break/>
+		</prompt>
+		<goto next="#efarmerMenu" />
+	</block>
+   </form>
+
+   <form id="eQuestions">
+	<block> 
+		<prompt>
+		  Here a recording is made of pressing questions <break/>
+		</prompt>
+		<goto next="#efarmerMenu" />
+	</block>
+   </form>
+
+   <form id="eSales">
+	<block> 
+		<prompt>
+		  Here a recording should be made in a formatted form of sales information <break/>
+		</prompt>
+		<goto next="#efarmerMenu" />
+	</block>
+   </form>
+
+   <!-- French Prompt Block -->
+   <menu id="frenchPrompt" dtmf="true">
+       <prompt xml:lang="fr-fr">
+		Vous êtes dans le menu francais. Pour donner des informations sur les agriculteurs ou recevoir des informations sur les agriculteurs, appuyez sur 1. Pour recevoir des informations sur les ventes, appuyez sur 2.
+	</prompt>
+    <choice next="#ffarmerMenu"/>
+    <choice next="#fSalesForm"/>
+   </menu>
+
+   <form id="fSalesForm">
+	<block> 
+		<prompt>
+		   here an audio should be played with information about the sales <break/>
+		</prompt>
+		<goto next="#frenchPrompt" />
+	</block>
+   </form>
+
+   <menu id="ffarmerMenu" dtmf="true">
+	<prompt xml:lang="fr-fr">
+	   Ceci est le menu des agriculteurs qui fournit différents types d'informations. Appuyez sur 1 pour les informations météorologiques, appuyez sur 2 pour les informations générales sur l'agriculture, appuyez sur 3 pour les réponses et conseils aux questions de la semaine dernière, appuyez sur 4 pour poser une question d'agriculteur, appuyez sur 5 pour soumettre des informations de vente. Appuyez sur 6 pour revenir au menu précédent.
+        </prompt>
+	<choice next="#fWeather"/>
+	<choice next="#fGeneral"/>
+	<choice next="#fAnswers"/>
+	<choice next="#fQuestions"/>
+	<choice next="#fSales"/>
+	<choice next="#frenchPrompt"/>
+    </menu>
+
+
+   <form id="fWeather">
+	<block> 
+		<prompt>
+		This is information about the weather <break/>
+		</prompt>
+		<goto next="#ffarmerMenu" />
+	</block>
+   </form>
+
+   <form id="fGeneral">
+	<block> 
+		<prompt>
+		  this should be a menu with categorized general information <break/>
+		</prompt>
+		<goto next="#ffarmerMenu" />
+	</block>
+   </form>
+
+   <form id="fAnswers">
+	<block> 
+		<prompt>
+		  Here a recording should be played of answers to previous questions <break/>
+		</prompt>
+		<goto next="#ffarmerMenu" />
+	</block>
+   </form>
+
+   <form id="fQuestions">
+	<block> 
+		<prompt>
+		  Here a recording is made of pressing questions <break/>
+		</prompt>
+		<goto next="#ffarmerMenu" />
+	</block>
+   </form>
+   <form id="fSales">
+	<block> 
+		<prompt>
+		  Here a recording should be made in a formatted form of sales information <break/>
+		</prompt>
+		<goto next="#ffarmerMenu"/>
+	</block>
+   </form>
+</vxml>
