@@ -4,12 +4,9 @@
         <record name="message" beep="true" maxtime="60s">
             <prompt >Please leave your message after the beep, then press any key.</prompt>
         </record>
-        <block>
+        <field id="confirmM">
             <prompt>Here's what you recorded <value expr="message"/>.</prompt>
-        </block>
-        <block>
-            <goto next="#confirmM"/>
-        </block>
+        </field>
     </form>
 
    <menu id="confirmM" dtmf="true"> 
