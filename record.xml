@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version = "2.1">
-    <form>
+    <form id="recordM">
         <record name="message" beep="true" maxtime="60s">
             <prompt>Please leave your message after the beep, then press any key.</prompt>
         </record>
         <block>
             <prompt>Here's what you recorded <value expr="message"/>.</prompt>
+            <goto next="#confirmM"/>
         </block>
+    </form>
+
+    <menu id="confirmM" dtmf="true"> 
+        <prompt> 
+            Press 1 to confirm question and end call. Press 2 to make a new attempt. Press 3 to delete message and return to the main menu.
+        </prompt> 
+        <choice next="#formSubmit"/>
+        <choice next="#recordM"/>
+        <choice next="mainvoice.xml#efarmerMenu"/>
+    </menu>
+
+    <form id="formSubmit">
         <block>
             <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post"/>
         </block>
     </form>
+
 </vxml>
