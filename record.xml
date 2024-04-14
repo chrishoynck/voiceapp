@@ -12,16 +12,12 @@
                 <prompt> 
                   Press 1 to confirm question and end call. Press 2 to make a new attempt. Press 3 to delete message and return to the main menu.
                 </prompt> 
-                <choice/>
+                <choice dtmf="1" >
+                    <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post" namelist="message"/>
+                </choice>
                 <choice next="#recordM"/>
                 <choice next="mainvoice.xml#efarmerMenu"/>
             </menu>
-        </block>
-    </form>
-
-    <form id="formSubmit">
-        <block>
-            <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post" namelist="#recordM.message"/>
         </block>
     </form>
 </vxml>
