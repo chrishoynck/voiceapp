@@ -2,7 +2,7 @@
 <vxml version = "2.1">
     <form id="recordM">
         <record name="message" beep="true" maxtime="60s">
-            <prompt>Please leave your message after the beep, then press any key.</prompt>
+            <prompt >Please leave your message after the beep, then press any key.</prompt>
         </record>
         <block>
             <prompt>Here's what you recorded <value expr="message"/>.</prompt>
@@ -21,7 +21,7 @@
 
     <form id="formSubmit">
         <block>
-            <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post" namelist="recordM.message"/>
+            <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post" namelist="#recordM.message"/>
         </block>
     </form>
 </vxml>
