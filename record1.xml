@@ -6,23 +6,31 @@
         </record>
         <block>
             <prompt>Here's what you recorded <value expr="message"/>.</prompt>
-            <goto next="#confirmM"/>
         </block>
+        <subdialog name="proceed" src="record1.xml#confirmM" >
+            <filled>
+                <if cond="proceed=='true'"> 
+                    <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post"/>
+                <else/>
+                    <goto next="mainvoice.xml#ffarmerMenu"/>
+                </if>
+            </filled>
+        </subdialog>
     </form>
 
     <menu id="confirmM" dtmf="true"> 
         <prompt> 
-            Press 1 to confirm question and end call. Press 2 to make a new attempt. Press 3 to delete message and return to the main menu.
+            Press 1 to confirm question and end call. Press 3 to delete message and return to the main menu.
         </prompt> 
-        <choice next="#formSubmit"/>
-        <choice next="#recordM"/>
-        <choice next="mainvoice.xml#efarmerMenu"/>
+        <choice dtmf="1">
+            <value expr="true"/>
+        </choice>
+        <choice dtmf="2">
+            <value expr="false"/>
+        </choice>
+        <filled>
+        <return/>
+        </filled>
     </menu>
-
-    <form id="formSubmit">
-        <block>
-            <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post"/>
-        </block>
-    </form>
 
 </vxml>
