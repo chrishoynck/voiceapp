@@ -6,18 +6,18 @@
         </record>
         <block>
             <prompt>Here's what you recorded <value expr="message"/>.</prompt>
-            <goto next="#confirmM"/>
+        </block>
+        <block>
+            <menu id="confirmM" dtmf="true"> 
+                <prompt> 
+                  Press 1 to confirm question and end call. Press 2 to make a new attempt. Press 3 to delete message and return to the main menu.
+                </prompt> 
+                <choice/>
+                <choice next="#recordM"/>
+                <choice next="mainvoice.xml#efarmerMenu"/>
+            </menu>
         </block>
     </form>
-
-    <menu id="confirmM" dtmf="true"> 
-        <prompt> 
-            Press 1 to confirm question and end call. Press 2 to make a new attempt. Press 3 to delete message and return to the main menu.
-        </prompt> 
-        <choice next="#formSubmit"/>
-        <choice next="#recordM"/>
-        <choice next="mainvoice.xml#efarmerMenu"/>
-    </menu>
 
     <form id="formSubmit">
         <block>
