@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version = "2.1">
     <form id="record">
-	    <block> 
-	        <prompt>Hello</prompt> 
-        </block>
         <record name="message" beep="true" maxtime="60s">
             <prompt>Please leave your message after the beep, then press any key.</prompt>
         </record>
@@ -12,7 +9,7 @@
         </block>
         <field name="accept">
             <prompt> 
-            Press 1 to confirm question and end call. Press 2 to repeat message. Press 3 to delete message and return to the main menu.
+            Press 1 to confirm question and end call. Press 2 to retry record of the message. Press 3 to delete message and return to the main menu.
             </prompt>
             <grammar mode="dtmf" root="acc">
                 <rule id="acc" scope="public">

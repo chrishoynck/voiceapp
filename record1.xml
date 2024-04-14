@@ -26,9 +26,7 @@
         <prompt> 
             Press 1 to confirm question and end call. Press 3 to delete message and return to the main menu.
         </prompt> 
-        <choice dtmf="1">
-            <value expr="true"/>
-        </choice>
+        <choice next="#accept"/>
         <choice dtmf="2">
             <value expr="false"/>
         </choice>
