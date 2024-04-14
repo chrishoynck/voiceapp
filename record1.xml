@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version = "2.1">
     <form id="recordM">
+    <var name="saveRec"/>
         <record name="message" beep="true" maxtime="60s">
             <prompt>Please leave your message after the beep, then press any key.</prompt>
         </record>
@@ -9,13 +10,16 @@
         </block>
         <subdialog name="proceed" src="record1.xml#confirmM" >
             <filled>
-                <if cond="proceed=='true'"> 
-                    <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post"/>
-                <else/>
-                    <goto next="mainvoice.xml#ffarmerMenu"/>
-                </if>
+                <assign name="saveRec" expr="proceed"/>
             </filled>
         </subdialog>
+        <filled>
+            <if cond="saveRec=='true'"> 
+                    <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post"/>
+            <else/>
+                <goto next="mainvoice.xml#ffarmerMenu"/>
+            </if>
+        </filled>
     </form>
 
     <menu id="confirmM" dtmf="true"> 
@@ -29,8 +33,12 @@
             <value expr="false"/>
         </choice>
         <filled>
-        <return/>
+            <return namelist="confirmM"/>
         </filled>
     </menu>
+
+    <form id="accept">
+        <var name="accept"/>
+    </form>
 
 </vxml>

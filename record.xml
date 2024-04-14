@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version = "2.1">
-    <form id="recordM">
-        <record name="message" beep="true" maxtime="60s">
-            <prompt >Please leave your message after the beep, then press any key.</prompt>
-        </record>
-        <field id="confirmM">
-            <prompt>Here's what you recorded <value expr="message"/>.</prompt>
-        </field>
-    </form>
-
-   <menu id="confirmM" dtmf="true"> 
-    <prompt> 
-        Press 1 to confirm question and end call. Press 2 to make a new attempt. Press 3 to delete message and return to the main menu.
-    </prompt> 
-    <choice next="#submitForm"/>
-    <choice next="#recordM"/>
-    <choice next="mainvoice.xml#efarmerMenu"/>
-    </menu>
-
-    <form id="submitForm">
-        <block>
-            <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post" namelist="recordM.message"/>
+    <form id="record">
+	    <block> 
+	        <prompt>Hello</prompt> 
         </block>
+        <record name="message" beep="true" maxtime="60s">
+            <prompt>Please leave your message after the beep, then press any key.</prompt>
+        </record>
+        <block>
+            <prompt>Here's what you recorded <value expr="message"/>.</prompt>
+        </block>
+        <field name="accept">
+            <prompt> 
+            Press 1 to confirm question and end call. Press 2 to repeat message. Press 3 to delete message and return to the main menu.
+            </prompt>
+            <grammar mode="dtmf" root="acc">
+                <rule id="acc" scope="public">
+                    <one-of>
+                        <item>1</item>
+                        <item>2</item>
+                        <item>3</item>
+                    </one-of>
+                </rule>
+            </grammar>
+        </field>
+        <filled>
+            <if cond="accept == 1">
+                <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post"/>
+            <elseif cond="accept == 2"/>
+                <goto next="#record"/>
+            <elseif cond="accept == 3"/>
+                <goto next="mainvoice.xml#ffarmerMenu"/>
+            </if>
+        </filled>
     </form>
-
 </vxml>
