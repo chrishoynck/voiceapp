@@ -77,7 +77,7 @@
 		<prompt>
 		  Here a recording is made of pressing questions <break/>
 		</prompt>
-        <goto next="record.xml"/>
+        <goto next="recordd.xml"/>
 	</block>
    </form>
 
