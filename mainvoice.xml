@@ -34,12 +34,13 @@
 
    <menu id="efarmerMenu" dtmf="true">
 	<prompt>
-	   This is the farmers menu providing different types of information. Press 1 for weather information, press 2 for general farming information, press 3 for answers and tips to last weeks questions, press 4 for asking a farmers question, press 5 for submitting sales information. Press 6 to return to the previous menu.
+	   This is the farmers menu providing different types of information. Press 1 for weather information, press 2 for general farming information, press 3 for answers and tips to last weeks questions, press 4 for asking a farmers question. Press 5 for helping other farmers with answering pressing questions. Press 6 for submitting sales information. Press 7 to return to the previous menu.
         </prompt>
 	<choice next="#eWeather"/>
 	<choice next="#eGeneral"/>
 	<choice next="#eAnswers"/>
 	<choice next="#eQuestions"/>
+    <choice next="#efarmerQuestions"/>
 	<choice next="#eSales"/>
 	<choice next="#englishPrompt"/>
     </menu>
@@ -54,12 +55,34 @@
 	</block>
    </form>
 
-   <form id="eGeneral">
+   <menu id="eGeneral">
 	<block> 
 		<prompt>
-		  this should be a menu with categorized general information <break/>
+		  This is a menu for general information about the production and farmer techniques for growing and planting the artemesia seeds. 
+          Press 1 for information about best practices to grow artemesia. Press 2 for information about the chemicals to use. 
+          Press 3 to return to the main menu<break/>
 		</prompt>
-		<goto next="#efarmerMenu" />
+		<choice next="#egrowingPlant"/>
+	    <choice next="#echemicals"/>
+	    <choice next="#efarmerMenu"/>
+	</block>
+   </menu>
+
+   <form id="egrowingPlant">
+	<block> 
+		<prompt>
+		This is inormation on how to grow the plant, providing basic steps and best practices and products<break/>
+		</prompt>
+		<goto next="#eGeneral" />
+	</block>
+   </form>
+
+   <form id="echemicals">
+	<block> 
+		<prompt>
+		This is information about what chemicals to use, and what are dangerous with some simple considerations. <break/>
+		</prompt>
+		<goto next="#eGeneral" />
 	</block>
    </form>
 
@@ -81,12 +104,44 @@
 	</block>
    </form>
 
+   <form id="eQuestions">
+	<field>
+		<prompt>
+		  Here a recording is played of pressing questions <break/>
+		</prompt>
+    </field>
+    <field id="answer">
+        <prompt>
+		  Press 1 to answer one of the questions. Press 2 to listen to the questions again. Press 3 to return to the previous menu. 
+        </prompt>
+        <grammar mode="dtmf" root="acc">
+                <rule id="acc" scope="public">
+                    <one-of>
+                        <item>1</item>
+                        <item>2</item>
+                        <item>3</item>
+                    </one-of>
+                </rule>
+        </grammar> 
+    </field>
+    <filled>
+            <if cond="answer == 1">
+                <goto next="recordAnswer.xml"/>
+            <elseif cond="answer == 2"/>
+                <goto next="#eQuestions"/>
+            <elseif cond="accept == 3"/>
+                <goto next="efarmerMenu"/>
+            </if>
+    </filled>
+   </form>
+
    <form id="eSales">
 	<block> 
 		<prompt>
-		  Here a recording should be made in a formatted form of sales information <break/>
+		  A recording will be made stating the sales information of your farm. This includes information
+          about the stock of the artemesia, the price, and the location of the farm. <break/>
 		</prompt>
-		<goto next="#efarmerMenu" />
+		<goto next="salesrecord.xml" />
 	</block>
    </form>
 

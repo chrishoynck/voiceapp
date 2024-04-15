@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version = "2.1">
     <form id="record">
-        <record name="message" beep="true" maxtime="20s">
-            <prompt>Please state your artemesia stock, sales and location after the beep, then press any key. </prompt>
+        <record name="message" beep="true" maxtime="60s">
+            <prompt>Please leave your answer after the beep, stating the question number for this answer first, then press any key.</prompt>
         </record>
         <block>
             <prompt>Here's what you've recorded <value expr="message"/><break/></prompt>
         </block>
         <field name="accept">
             <prompt> 
-            Press 1 to confirm the sales information and end call. Press 2 to retry record of the sales information. Press 3 to delete sales information and return to the main menu.
+            Press 1 to confirm this awnser and end call. Press 2 to retry recording your answer. Press 3 to delete the answer and return to the main menu.
             </prompt>
             <grammar mode="dtmf" root="acc">
                 <rule id="acc" scope="public">
@@ -23,7 +23,8 @@
         </field>
         <filled>
             <if cond="accept == 1">
-                <submit next="https://ict4d.altervista.org/recordingSales.php" enctype="multipart/form-data" method="post"/>
+                <prompt> Thank you so much for helping others, good farming!</prompt>
+                <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post"/>
             <elseif cond="accept == 2"/>
                 <goto next="#record"/>
             <elseif cond="accept == 3"/>
