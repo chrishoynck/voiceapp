@@ -104,7 +104,7 @@
 	</block>
    </form>
 
-   <form id="eQuestions">
+   <form id="efarmerQuestions">
 	<field>
 		<prompt>
 		  Here a recording is played of pressing questions <break/>
@@ -128,7 +128,7 @@
             <if cond="answer == 1">
                 <goto next="recordAnswer.xml"/>
             <elseif cond="answer == 2"/>
-                <goto next="#eQuestions"/>
+                <goto next="#efarmerQuestions"/>
             <elseif cond="accept == 3"/>
                 <goto next="efarmerMenu"/>
             </if>
@@ -165,16 +165,16 @@
 
    <menu id="ffarmerMenu" dtmf="true">
 	<prompt xml:lang="fr-fr">
-	   Ceci est le menu des agriculteurs qui fournit différents types d'informations. Appuyez sur 1 pour les informations météorologiques, appuyez sur 2 pour les informations générales sur l'agriculture, appuyez sur 3 pour les réponses et conseils aux questions de la semaine dernière, appuyez sur 4 pour poser une question d'agriculteur, appuyez sur 5 pour soumettre des informations de vente. Appuyez sur 6 pour revenir au menu précédent.
+	   Ceci est le menu des agriculteurs offrant différents types d'informations. Appuyez sur 1 pour les informations météorologiques, appuyez sur 2 pour les informations générales sur l'agriculture, appuyez sur 3 pour les réponses et conseils aux questions de la semaine dernière, appuyez sur 4 pour poser une question d'agriculteur. Appuyez sur 5 pour aider d'autres agriculteurs à répondre à des questions urgentes. Appuyez sur 6 pour soumettre des informations de vente. Appuyez sur 7 pour revenir au menu précédent.
         </prompt>
 	<choice next="#fWeather"/>
 	<choice next="#fGeneral"/>
 	<choice next="#fAnswers"/>
 	<choice next="#fQuestions"/>
+    <choice next="ffarmerQuestions"/>
 	<choice next="#fSales"/>
 	<choice next="#frenchPrompt"/>
     </menu>
-
 
    <form id="fWeather">
 	<block> 
@@ -185,12 +185,32 @@
 	</block>
    </form>
 
-   <form id="fGeneral">
+   <menu id="fGeneral">
+	<block> 
+		<prompt xml:lang="fr-fr">
+		  Ceci est un menu pour des informations générales sur la production et les techniques agricoles pour la culture et la plantation des graines d'artémisia. Appuyez sur 1 pour des informations sur les meilleures pratiques pour cultiver l'artémisia. Appuyez sur 2 pour des informations sur les produits chimiques à utiliser. Appuyez sur 3 pour revenir au menu principal.<break/>
+		</prompt>
+		<choice next="#fgrowingPlant"/>
+	    <choice next="#fchemicals"/>
+	    <choice next="#ffarmerMenu"/>
+	</block>
+   </menu>
+
+   <form id="fgrowingPlant">
 	<block> 
 		<prompt>
-		  this should be a menu with categorized general information <break/>
+		This is inormation on how to grow the plant, providing basic steps and best practices and products<break/>
 		</prompt>
-		<goto next="#ffarmerMenu" />
+		<goto next="#fGeneral" />
+	</block>
+   </form>
+
+   <form id="fchemicals">
+	<block> 
+		<prompt>
+		This is information about what chemicals to use, and what are dangerous with some simple considerations. <break/>
+		</prompt>
+		<goto next="#fGeneral" />
 	</block>
    </form>
 
@@ -211,12 +231,44 @@
         <goto next="recordf.xml"/>
 	</block>
    </form>
+
+   <form id="ffarmerQuestions">
+	<field>
+		<prompt>
+		  Here a recording is played of pressing questions <break/>
+		</prompt>
+    </field>
+    <field id="answer">
+        <prompt xml:lang="fr-fr">
+		  Appuyez sur 1 pour répondre à l'une des questions. Appuyez sur 2 pour écouter à nouveau les questions. Appuyez sur 3 pour revenir au menu précédent. 
+        </prompt>
+        <grammar mode="dtmf" root="acc">
+                <rule id="acc" scope="public">
+                    <one-of>
+                        <item>1</item>
+                        <item>2</item>
+                        <item>3</item>
+                    </one-of>
+                </rule>
+        </grammar> 
+    </field>
+    <filled>
+            <if cond="answer == 1">
+                <goto next="recordAnswer.xml"/>
+            <elseif cond="answer == 2"/>
+                <goto next="#ffarmerQuestions"/>
+            <elseif cond="accept == 3"/>
+                <goto next="ffarmerMenu"/>
+            </if>
+    </filled>
+   </form>
+
    <form id="fSales">
 	<block> 
-		<prompt>
-		  Here a recording should be made in a formatted form of sales information <break/>
+		<prompt xml:lang="fr-fr">
+		  Un enregistrement sera effectué pour indiquer les informations de vente de votre ferme. Cela inclut des informations sur le stock d'artémésia, le prix, et la localisation de la ferme. <break/>
 		</prompt>
-		<goto next="#ffarmerMenu"/>
+		<goto next="fsalesrecord.xml" />
 	</block>
    </form>
 </vxml>

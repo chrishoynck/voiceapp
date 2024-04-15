@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+    <form id="record">
+        <record name="message" beep="true" maxtime="20s">
+            <prompt xml:lang="fr-fr">Veuillez indiquer votre stock d'artémisia, vos ventes et votre localisation après le bip sonore, puis appuyez sur n'importe quelle touche. </prompt>
+        </record>
+        <block>
+            <prompt xml:lang="fr-fr">Voici ce que vous avez enregistré <value expr="message"/><break/></prompt>
+        </block>
+        <field name="accept">
+            <prompt xml:lang="fr-fr"> 
+            Appuyez sur 1 pour confirmer les informations de vente et terminer l'appel. Appuyez sur 2 pour réenregistrer les informations de vente. Appuyez sur 3 pour supprimer les informations de vente et revenir au menu principal.
+            </prompt>
+            <grammar mode="dtmf" root="acc">
+                <rule id="acc" scope="public">
+                    <one-of>
+                        <item>1</item>
+                        <item>2</item>
+                        <item>3</item>
+                    </one-of>
+                </rule>
+            </grammar>
+        </field>
+        <filled>
+            <if cond="accept == 1">
+                <submit next="https://ict4d.altervista.org/recordingSales.php" enctype="multipart/form-data" method="post"/>
+            <elseif cond="accept == 2"/>
+                <goto next="#record"/>
+            <elseif cond="accept == 3"/>
+                <goto next="mainvoice.xml#ffarmerMenu"/>
+            </if>
+        </filled>
+    </form>
+</vxml>
