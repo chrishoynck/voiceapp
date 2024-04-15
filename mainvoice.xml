@@ -45,7 +45,6 @@
 	<choice next="#englishPrompt"/>
     </menu>
 
-
    <form id="eWeather">
 	<block> 
 		<prompt>
@@ -55,11 +54,11 @@
 	</block>
    </form>
 
-   <menu id="eGeneral">
+   <menu id="eGeneral" dtmf="true">
 		<prompt>
 		  This is a menu for general information about the production and farmer techniques for growing and planting the artemesia seeds. 
           Press 1 for information about best practices to grow artemesia. Press 2 for information about the chemicals to use. 
-          Press 3 to return to the main menu<break/>
+          Press 3 to return to the main menu <break/>
 		</prompt>
 		<choice next="#egrowingPlant"/>
 	    <choice next="#echemicals"/>
@@ -71,7 +70,7 @@
 		<prompt>
 		  This is inormation on how to grow the plant, providing basic steps and best practices and products<break/>
 		</prompt>
-		<goto next="#eGeneral" />
+		<goto next="#eGeneral"/>
 	</block>
    </form>
 
@@ -108,7 +107,7 @@
 		  Here a recording is played of pressing questions <break/>
 		</prompt>
     </block>
-    <field id="answer">
+    <field name="answer">
         <prompt>
 		  Press 1 to answer one of the questions. Press 2 to listen to the questions again. Press 3 to return to the previous menu. 
         </prompt>
@@ -127,7 +126,7 @@
                 <goto next="recordAnswer.xml"/>
             <elseif cond="answer == 2"/>
                 <goto next="#efarmerQuestions"/>
-            <elseif cond="accept == 3"/>
+            <elseif cond="answer == 3"/>
                 <goto next="efarmerMenu"/>
             </if>
     </filled>
@@ -183,7 +182,7 @@
 	</block>
    </form>
 
-   <menu id="fGeneral">
+   <menu id="fGeneral" dtmf="true">
 		<prompt xml:lang="fr-fr">
 		  Ceci est un menu pour des informations générales sur la production et les techniques agricoles pour la culture et la plantation des graines d'artémisia. Appuyez sur 1 pour des informations sur les meilleures pratiques pour cultiver l'artémisia. Appuyez sur 2 pour des informations sur les produits chimiques à utiliser. Appuyez sur 3 pour revenir au menu principal.<break/>
 		</prompt>
@@ -234,7 +233,7 @@
 		  Here a recording is played of pressing questions <break/>
 		</prompt>
     </block>
-    <field id="answer">
+    <field name="answer">
         <prompt xml:lang="fr-fr">
 		  Appuyez sur 1 pour répondre à l'une des questions. Appuyez sur 2 pour écouter à nouveau les questions. Appuyez sur 3 pour revenir au menu précédent. 
         </prompt>
@@ -253,7 +252,7 @@
                 <goto next="recordAnswer.xml"/>
             <elseif cond="answer == 2"/>
                 <goto next="#ffarmerQuestions"/>
-            <elseif cond="accept == 3"/>
+            <elseif cond="answer == 3"/>
                 <goto next="ffarmerMenu"/>
             </if>
     </filled>
