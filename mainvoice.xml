@@ -69,7 +69,7 @@
    <form id="egrowingPlant">
 	<block> 
 		<prompt>
-		This is inormation on how to grow the plant, providing basic steps and best practices and products<break/>
+		  This is inormation on how to grow the plant, providing basic steps and best practices and products<break/>
 		</prompt>
 		<goto next="#eGeneral" />
 	</block>
@@ -80,7 +80,7 @@
 		<prompt>
 		This is information about what chemicals to use, and what are dangerous with some simple considerations. <break/>
 		</prompt>
-		<goto next="#eGeneral" />
+		<goto next="#eGeneral"/>
 	</block>
    </form>
 
@@ -103,11 +103,11 @@
    </form>
 
    <form id="efarmerQuestions">
-	<field>
+	<block>
 		<prompt>
 		  Here a recording is played of pressing questions <break/>
 		</prompt>
-    </field>
+    </block>
     <field id="answer">
         <prompt>
 		  Press 1 to answer one of the questions. Press 2 to listen to the questions again. Press 3 to return to the previous menu. 
@@ -229,11 +229,11 @@
    </form>
 
    <form id="ffarmerQuestions">
-	<field>
+	<block>
 		<prompt>
 		  Here a recording is played of pressing questions <break/>
 		</prompt>
-    </field>
+    </block>
     <field id="answer">
         <prompt xml:lang="fr-fr">
 		  Appuyez sur 1 pour répondre à l'une des questions. Appuyez sur 2 pour écouter à nouveau les questions. Appuyez sur 3 pour revenir au menu précédent. 
