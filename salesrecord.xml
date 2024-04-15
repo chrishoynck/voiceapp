@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version = "2.1">
     <form id="record">
-        <record name="message" beep="true" maxtime="60s">
-            <prompt>Please leave your message after the beep, then press any key.</prompt>
+        <record name="stock" beep="true" maxtime="60s">
+            <prompt>Please leave your state your artemesia stock after the beep, then press any key.</prompt>
+        </record>
+        <record name="price" beep="true" maxtime="60s">
+            <prompt>Please leave your state your artemesia stock after the beep, then press any key.</prompt>
+        </record>
+        <record name="location" beep="true" maxtime="60s">
+            <prompt>Please leave your state your artemesia stock after the beep, then press any key.</prompt>
         </record>
         <block>
-            <prompt>Here's what you've recorded <value expr="message"/><break/></prompt>
+            <prompt>Here's what you've recorded <value expr="stock"/> <break/> <value expr="price"> <break/> <value expr="location"><break/></prompt>
         </block>
         <field name="accept">
             <prompt> 
@@ -23,7 +29,7 @@
         </field>
         <filled>
             <if cond="accept == 1">
-                <submit next="https://ict4d.altervista.org/recording_english.php" enctype="multipart/form-data" method="post"/>
+                <submit next="https://ict4d.altervista.org/recordingSales.php" namelist="stock price location" enctype="multipart/form-data" method="post"/>
             <elseif cond="accept == 2"/>
                 <goto next="#record"/>
             <elseif cond="accept == 3"/>
