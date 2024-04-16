@@ -2,7 +2,7 @@
 <vxml version="2.1">
    <menu id="languageChoice" dtmf="true">
       <prompt>
-	  	 Welcome to artemisia VoiceNet, this is an inforamtion platform about artemisia.
+	  	 Welcome to artemisia VoiceNet, this is an information platform about artemisia.
          Please choose your language: Press 1 for English or 2 for French.
       </prompt>
       <prompt xml:lang="fr-fr">
