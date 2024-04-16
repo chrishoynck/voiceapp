@@ -112,7 +112,11 @@
 		<prompt>
 		  Here a recording is played of pressing questions <break/>
 		</prompt>
+		<goto next= "https://ict4d.altervista.org/record_unanswered.php"/>
     </block>
+	</form>
+
+	<form id="eanswerto">
     <field name="answer">
         <prompt>
 		  Press 1 to answer one of the questions. Press 2 to listen to the questions again. Press 3 to return to the previous menu. 
