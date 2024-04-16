@@ -56,7 +56,7 @@
 		<prompt>
 		 This is information about the weather <break/>
 		</prompt>
-		<goto next="#efarmerMenu" />
+		<goto next= "https://ict4d.altervista.org/Play_multiple_audio_from_folder.php"/>
 	</block>
    </form>
 
@@ -74,7 +74,7 @@
    <form id="egrowingPlant">
 	<block> 
 		<prompt>
-		  This is inormation on how to grow the plant, providing basic steps and best practices and products<break/>
+		  This is information on how to grow the plant, providing basic steps and best practices and products<break/>
 		</prompt>
 		<goto next="#eGeneral"/>
 	</block>
@@ -94,7 +94,7 @@
 		<prompt>
 		  Here a recording should be played of answers to previous questions <break/>
 		</prompt>
-		<goto next="#efarmerMenu" />
+		<goto next= "https://ict4d.altervista.org/Play_multiple_audio_from_folder.php"/>
 	</block>
    </form>
 
