@@ -4,13 +4,13 @@
       <prompt xml:lang="fr-fr">
           Bonjour, world!
       </prompt>
-      <prompt xml:lang="fr-fr">
-         Veuillez choisir votre langue : Appuyez 1 pour l'anglais ou 2 pour le français.
-      </prompt>
       <prompt>
          Please choose your language: Press 1 for English or 2 for French.
       </prompt>
-        <choice next="#englishPrompt"/>
+      <prompt xml:lang="fr-fr">
+         Veuillez choisir votre langue : Appuyez 1 pour l'anglais ou 2 pour le français.
+      </prompt>
+    <choice next="#englishPrompt"/>
 	<choice next="#frenchPrompt"/>
     </menu>
 	
@@ -34,7 +34,13 @@
 
    <menu id="efarmerMenu" dtmf="true">
 	<prompt>
-	   This is the farmers menu providing different types of information. Press 1 for weather information, press 2 for general farming information, press 3 for answers and tips to last weeks questions, press 4 for asking a farmers question. Press 5 for helping other farmers with answering pressing questions. Press 6 for submitting sales information. Press 7 to return to the previous menu.
+	   You've entered the farmers menu providing different types of information, or for submitting answers and questions to the platform. 
+       Press 1 for weather information. 
+       Press 2 for general farming information.
+       Press 3 for answers and tips to last weeks questions.
+       Press 4 for asking a pressing question about the farming of artemesia plants to other farmers. 
+       Press 5 for helping other farmers with answering pressing questions. 
+       Press 6 for submitting sales information. Press 7 to return to the previous menu.
     </prompt>
 	<choice next="#eWeather"/>
 	<choice next="#eGeneral"/>
@@ -48,7 +54,7 @@
    <form id="eWeather">
 	<block> 
 		<prompt>
-		This is information about the weather <break/>
+		 This is information about the weather <break/>
 		</prompt>
 		<goto next="#efarmerMenu" />
 	</block>
@@ -77,7 +83,7 @@
    <form id="echemicals">
 	<block> 
 		<prompt>
-		This is information about what chemicals to use, and what are dangerous with some simple considerations. <break/>
+		    This is information about what chemicals to use, and what are dangerous with some simple considerations. <break/>
 		</prompt>
 		<goto next="#eGeneral"/>
 	</block>
@@ -95,7 +101,7 @@
    <form id="eQuestions">
 	<block> 
 		<prompt>
-		  Here a recording is made of pressing questions <break/>
+		   A recording will be made of your pressing question <break/>
 		</prompt>
         <goto next="record.xml"/>
 	</block>
