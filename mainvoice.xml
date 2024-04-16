@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
    <menu id="languageChoice" dtmf="true">
-      <prompt xml:lang="fr-fr">
-          Bonjour, world!
-      </prompt>
       <prompt>
+	  	 Welcome to artemisia VoiceNet, this is an inforamtion platform about artemisia.
          Please choose your language: Press 1 for English or 2 for French.
       </prompt>
       <prompt xml:lang="fr-fr">
+	  	 Bienvenue sur Artemesia VoiceNet, ceci est une plateforme d'informations sur l'artémisia.
          Veuillez choisir votre langue : Appuyez 1 pour l'anglais ou 2 pour le français.
       </prompt>
     <choice next="#englishPrompt"/>
