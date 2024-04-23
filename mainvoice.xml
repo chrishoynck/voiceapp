@@ -136,7 +136,7 @@
             <elseif cond="answer == 2"/>
                 <goto next="#efarmerQuestions"/>
             <elseif cond="answer == 3"/>
-                <goto next="efarmerMenu"/>
+                <goto next="#efarmerMenu"/>
             </if>
     </filled>
    </form>
