@@ -93,7 +93,7 @@
 		<prompt>
 		  Here a recording should be played of answers to previous questions <break/>
 		</prompt>
-		<goto next= "https://ict4d.altervista.org/Play_multiple_audio_from_folder.php"/>
+		<goto next= "https://ict4d.altervista.org/English/Answers/play.php"/>
 	</block>
    </form>
 
@@ -102,7 +102,7 @@
 		<prompt>
 		   A recording will be made of your pressing question <break/>
 		</prompt>
-        <goto next="record.xml"/>
+        <goto next="recordQuestion.xml"/>
 	</block>
    </form>
 
@@ -184,10 +184,10 @@
 
    <form id="fWeather">
 	<block> 
-		<prompt>
-		This is information about the weather <break/>
+		<prompt xml:lang="fr-fr">
+		Voici des informations sur la météo à Bamako. <break/>
 		</prompt>
-		<goto next="#ffarmerMenu" />
+		<goto next= "https://ict4d.altervista.org/weather_french.php"/>
 	</block>
    </form>
 
@@ -223,7 +223,7 @@
 		<prompt>
 		  Here a recording should be played of answers to previous questions <break/>
 		</prompt>
-		<goto next="#ffarmerMenu" />
+		<goto next="https://ict4d.altervista.org/French/Answers/play.php" />
 	</block>
    </form>
 
@@ -232,7 +232,7 @@
 		<prompt>
 		  Here a recording is made of pressing questions <break/>
 		</prompt>
-        <goto next="recordf.xml"/>
+        <goto next="recordQuestionFrench.xml"/>
 	</block>
    </form>
 
@@ -241,10 +241,14 @@
 		<prompt>
 		  Here a recording is played of pressing questions <break/>
 		</prompt>
+		<goto next= "https://ict4d.altervista.org/French/Questions/play.php"/>
     </block>
+	</form>
+
+	<form id="fanswerto">
     <field name="answer">
         <prompt xml:lang="fr-fr">
-		  Appuyez sur 1 pour répondre à l'une des questions. Appuyez sur 2 pour écouter à nouveau les questions. Appuyez sur 3 pour revenir au menu précédent. 
+		   Appuyez sur 1 pour répondre à l'une des questions. Appuyez sur 2 pour écouter à nouveau les questions. Appuyez sur 3 pour revenir au menu précédent.
         </prompt>
         <grammar mode="dtmf" root="acc">
                 <rule id="acc" scope="public">
@@ -258,11 +262,11 @@
     </field>
     <filled>
             <if cond="answer == 1">
-                <goto next="recordAnswer.xml"/>
+                <goto next="recordAnswerFrench.xml"/>
             <elseif cond="answer == 2"/>
                 <goto next="#ffarmerQuestions"/>
             <elseif cond="answer == 3"/>
-                <goto next="ffarmerMenu"/>
+                <goto next="#ffarmerMenu"/>
             </if>
     </filled>
    </form>
@@ -272,7 +276,7 @@
 		<prompt xml:lang="fr-fr">
 		  Un enregistrement sera effectué pour indiquer les informations de vente de votre ferme. Cela inclut des informations sur le stock d'artémésia, le prix, et la localisation de la ferme. <break/>
 		</prompt>
-		<goto next="fsalesrecord.xml" />
+		<goto next="recordSaleFrench.xml" />
 	</block>
    </form>
 </vxml>

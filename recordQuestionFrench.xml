@@ -2,14 +2,14 @@
 <vxml version = "2.1">
     <form id="record">
         <record name="message" beep="true" maxtime="60s">
-            <prompt>Please leave your answer after the beep, stating the question number for this answer first, then press any key.</prompt>
+            <prompt xml:lang="fr-fr">Veuillez laisser votre message après le bip sonore, puis appuyez sur n'importe quelle touche.</prompt>
         </record>
         <block>
-            <prompt>Here's what you've recorded <value expr="message"/><break/></prompt>
+            <prompt xml:lang="fr-fr">Voici ce que vous avez enregistré<value expr="message"/><break/></prompt>
         </block>
         <field name="accept">
-            <prompt> 
-            Press 1 to confirm this awnser and end call. Press 2 to retry recording your answer. Press 3 to delete the answer and return to the main menu.
+            <prompt xml:lang="fr-fr"> 
+            Appuyez sur 1 pour confirmer la question et terminer l'appel. Appuyez sur 2 pour réenregistrer le message. Appuyez sur 3 pour supprimer le message et revenir au menu principal.
             </prompt>
             <grammar mode="dtmf" root="acc">
                 <rule id="acc" scope="public">
@@ -23,12 +23,11 @@
         </field>
         <filled>
             <if cond="accept == 1">
-                <prompt> Thank you so much for helping others, good farming!</prompt>
-                <submit next="https://ict4d.altervista.org/English/NewRecords/record_answer.php" enctype="multipart/form-data" method="post"/>
+                <submit next="https://ict4d.altervista.org/French/NewRecords/record_question.php" enctype="multipart/form-data" method="post"/>
             <elseif cond="accept == 2"/>
                 <goto next="#record"/>
             <elseif cond="accept == 3"/>
-                <goto next="mainvoice.xml#efarmerMenu"/>
+                <goto next="mainvoice.xml#ffarmerMenu"/>
             </if>
         </filled>
     </form>

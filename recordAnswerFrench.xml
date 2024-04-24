@@ -2,14 +2,14 @@
 <vxml version = "2.1">
     <form id="record">
         <record name="message" beep="true" maxtime="60s">
-            <prompt xml:lang="fr-fr">Veuillez laisser votre message après le bip sonore, puis appuyez sur n'importe quelle touche.</prompt>
+            <prompt xml:lang="fr-fr">Veuillez laisser votre réponse après le bip, en indiquant d'abord le numéro de question pour cette réponse, puis appuyez sur n'importe quelle touche.</prompt>
         </record>
         <block>
-            <prompt xml:lang="fr-fr">Voici ce que vous avez enregistré<value expr="message"/><break/></prompt>
+            <prompt xml:lang="fr-fr">Voici ce que vous avez enregistré <value expr="message"/><break/></prompt>
         </block>
         <field name="accept">
             <prompt xml:lang="fr-fr"> 
-            Appuyez sur 1 pour confirmer la question et terminer l'appel. Appuyez sur 2 pour réenregistrer le message. Appuyez sur 3 pour supprimer le message et revenir au menu principal.
+            Appuyez sur 1 pour confirmer cet répondeur et mettre fin à l'appel. Appuyez sur 2 pour réessayer d'enregistrer votre réponse. Appuyez sur 3 pour supprimer la réponse et revenir au menu principal.
             </prompt>
             <grammar mode="dtmf" root="acc">
                 <rule id="acc" scope="public">
@@ -23,7 +23,8 @@
         </field>
         <filled>
             <if cond="accept == 1">
-                <submit next="https://ict4d.altervista.org/recording_french.php" enctype="multipart/form-data" method="post"/>
+                <prompt xml:lang="fr-fr"> Merci beaucoup d'aider les autres, bonne agriculture !</prompt>
+                <submit next="https://ict4d.altervista.org/French/NewRecords/record_answer.php" enctype="multipart/form-data" method="post"/>
             <elseif cond="accept == 2"/>
                 <goto next="#record"/>
             <elseif cond="accept == 3"/>
