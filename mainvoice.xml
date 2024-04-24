@@ -147,7 +147,7 @@
 		  A recording will be made stating the sales information of your farm. This includes information
           about the stock of the artemesia, the price, and the location of the farm. <break/>
 		</prompt>
-		<goto next="salesrecord.xml" />
+		<goto next="recordSale.xml" />
 	</block>
    </form>
 
