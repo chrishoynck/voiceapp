@@ -55,7 +55,7 @@
 		<prompt>
 		 This is information about the weather <break/>
 		</prompt>
-		<goto next= "https://ict4d.altervista.org/Play_multiple_audio_from_folder.php"/>
+		<goto next= "https://ict4d.altervista.org/weather.php"/>
 	</block>
    </form>
 
