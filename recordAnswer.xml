@@ -24,7 +24,7 @@
         <filled>
             <if cond="accept == 1">
                 <prompt> Thank you so much for helping others, good farming!</prompt>
-                <submit next="https://ict4d.altervista.org/recording.php" enctype="multipart/form-data" method="post"/>
+                <submit next="https://ict4d.altervista.org/English/NewRecords/record.php" enctype="multipart/form-data" method="post"/>
             <elseif cond="accept == 2"/>
                 <goto next="#record"/>
             <elseif cond="accept == 3"/>
