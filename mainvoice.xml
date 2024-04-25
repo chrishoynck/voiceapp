@@ -13,7 +13,7 @@
 	<choice next="#frenchPrompt"/>
     </menu>
 	
-   <!-- English Prompt Block -->
+   <!-- English -->
    <menu id="englishPrompt" dtmf="true">
       	<prompt>
 		You've entered the English menu. For providing farmers input or receiving farmers information, press 1. For receiving sales information, press 2
@@ -36,24 +36,35 @@
 	   You've entered the farmers menu providing different types of information, or for submitting answers and questions to the platform. 
        Press 1 for weather information. 
        Press 2 for general farming information.
-       Press 3 for answers and tips to last weeks questions.
-       Press 4 for asking a pressing question about the farming of artemesia plants to other farmers. 
-       Press 5 for helping other farmers with answering pressing questions. 
-       Press 6 for submitting sales information. Press 7 to return to the previous menu.
+       Press 3 for submitting sales information. 
+	   Press 4 for submitting or hearing answers or questions.
+	   Press 5 to return to the previous menu.
     </prompt>
 	<choice next="#eWeather"/>
 	<choice next="#eGeneral"/>
-	<choice next="#eAnswers"/>
-	<choice next="#eQuestions"/>
-    <choice next="#efarmerQuestions"/>
 	<choice next="#eSales"/>
+	<choice next="#equestionPlatform"/>
 	<choice next="#englishPrompt"/>
     </menu>
+
+	<menu id="equestionPlatform" dtmf="true">
+		<prompt>
+		You've entered the menu for farmer questions and answers concerning the artemesia plant. 
+		Press 1 for answers and tips to last weeks questions.
+        Press 2 for asking a pressing question about the farming of artemesia plants to other farmers. 
+        Press 3 for helping other farmers with answering pressing questions. 
+		Press 4 to return to the previous menu.
+		</prompt>
+	    <choice next="#eAnswers"/>
+		<choice next="#eQuestions"/>
+    	<choice next="#efarmerQuestions"/>
+		<choice next="#efarmerMenu"/>
+	</menu>
 
    <form id="eWeather">
 	<block> 
 		<prompt>
-		 This is information about the weather in Bamako <break/>
+		 here information about the weather in Bamako is provided<break/>
 		</prompt>
 		<goto next= "https://ict4d.altervista.org/weather.php"/>
 	</block>
@@ -91,7 +102,7 @@
    <form id="eAnswers">
 	<block> 
 		<prompt>
-		  Here a recording should be played of answers to previous questions <break/>
+		  Here a recording is played of answers to previous questions, we hope these answers resolve your problem!<break/>
 		</prompt>
 		<goto next= "https://ict4d.altervista.org/English/Answers/play.php"/>
 	</block>
@@ -100,7 +111,7 @@
    <form id="eQuestions">
 	<block> 
 		<prompt>
-		   A recording will be made of your pressing question <break/>
+		   Here a recording will be made of your pressing question, we hope to provide answers within 2 weeks <break/>
 		</prompt>
         <goto next="recordQuestion.xml"/>
 	</block>
@@ -109,7 +120,7 @@
    <form id="efarmerQuestions">
 	<block>
 		<prompt>
-		  Here a recording is played of pressing questions <break/>
+		  Here a recording is played of pressing questions, the farmer community appreciates your knowledge sharing! <break/>
 		</prompt>
 		<goto next= "https://ict4d.altervista.org/English/Questions/play.php"/>
     </block>
@@ -151,7 +162,7 @@
 	</block>
    </form>
 
-   <!-- French Prompt Block -->
+   <!-- French -->
    <menu id="frenchPrompt" dtmf="true">
        <prompt xml:lang="fr-fr">
 		Vous êtes dans le menu francais. Pour donner des informations sur les agriculteurs ou recevoir des informations sur les agriculteurs, appuyez sur 1. Pour recevoir des informations sur les ventes, appuyez sur 2.
@@ -162,8 +173,8 @@
 
    <form id="fSalesForm">
 	<block> 
-		<prompt>
-		   here an audio should be played with information about the sales <break/>
+		<prompt xml:lang="fr-fr">
+		   Ici, un enregistrement audio devrait être diffusé avec des informations sur les ventes. <break/>
 		</prompt>
 		<goto next="#frenchPrompt" />
 	</block>
@@ -171,16 +182,34 @@
 
    <menu id="ffarmerMenu" dtmf="true">
 	<prompt xml:lang="fr-fr">
-	   Ceci est le menu des agriculteurs offrant différents types d'informations. Appuyez sur 1 pour les informations météorologiques, appuyez sur 2 pour les informations générales sur l'agriculture, appuyez sur 3 pour les réponses et conseils aux questions de la semaine dernière, appuyez sur 4 pour poser une question d'agriculteur. Appuyez sur 5 pour aider d'autres agriculteurs à répondre à des questions urgentes. Appuyez sur 6 pour soumettre des informations de vente. Appuyez sur 7 pour revenir au menu précédent.
-        </prompt>
+	Bienvenue dans le menu agricole offrant différents types d'informations, ou pour soumettre des réponses et des questions à la plateforme.
+	Appuyez sur 1 pour obtenir des informations météorologiques.
+	Appuyez sur 2 pour des informations générales sur l'agriculture.
+	Appuyez sur 3 pour soumettre des informations de vente.
+	Appuyez sur 4 pour soumettre ou écouter des réponses ou des questions.
+	Appuyez sur 5 pour revenir au menu précédent.
+    </prompt>
 	<choice next="#fWeather"/>
 	<choice next="#fGeneral"/>
-	<choice next="#fAnswers"/>
-	<choice next="#fQuestions"/>
-    <choice next="ffarmerQuestions"/>
 	<choice next="#fSales"/>
+	<choice next="#fquestionsPlatform"/>
 	<choice next="#frenchPrompt"/>
     </menu>
+
+	<menu id="fquestionPlatform" dtmf="true">
+		<prompt xml:lang="fr-fr">
+		Vous avez accédé au menu des questions et réponses des agriculteurs concernant la plante artemisia.
+		Appuyez sur 1 pour obtenir des réponses et des conseils aux questions de la semaine dernière.
+		Appuyez sur 2 pour poser une question urgente sur la culture des plantes d'artémisia à d'autres agriculteurs.
+		Appuyez sur 3 pour aider d'autres agriculteurs à répondre à des questions urgentes.
+		Appuyez sur 4 pour revenir au menu précédent.
+		</prompt>
+	    <choice next="#fAnswers"/>
+		<choice next="#fQuestions"/>
+    	<choice next="#ffarmerQuestions"/>
+		<choice next="#ffarmerMenu"/>
+	</menu>
+
 
    <form id="fWeather">
 	<block> 
@@ -202,8 +231,8 @@
 
    <form id="fgrowingPlant">
 	<block> 
-		<prompt>
-		This is inormation on how to grow the plant, providing basic steps and best practices and products<break/>
+		<prompt xml:lang="fr-fr">
+		Ceci est une information sur la façon de cultiver la plante, fournissant des étapes de base, les meilleures pratiques et produits.<break/>
 		</prompt>
 		<goto next="#fGeneral" />
 	</block>
@@ -211,8 +240,8 @@
 
    <form id="fchemicals">
 	<block> 
-		<prompt>
-		This is information about what chemicals to use, and what are dangerous with some simple considerations. <break/>
+		<prompt xml:lang="fr-fr">
+		 Ceci est une information sur les produits chimiques à utiliser, ainsi que sur ceux qui sont dangereux, avec quelques considérations simples.<break/>
 		</prompt>
 		<goto next="#fGeneral" />
 	</block>
@@ -220,8 +249,8 @@
 
    <form id="fAnswers">
 	<block> 
-		<prompt>
-		  Here a recording should be played of answers to previous questions <break/>
+		<prompt xml:lang="fr-fr">
+		  Ici, un enregistrement est diffusé des réponses aux questions précédentes. Nous espérons qu'elles vous aideront à résoudre vos problèmes ! <break/>
 		</prompt>
 		<goto next="https://ict4d.altervista.org/French/Answers/play.php" />
 	</block>
@@ -229,8 +258,8 @@
 
    <form id="fQuestions">
 	<block> 
-		<prompt>
-		  Here a recording is made of pressing questions <break/>
+		<prompt xml:lang="fr-fr">
+		  Un enregistrement est réalisé ici des questions pressantes. Nous espérons pouvoir y fournir des réponses dans deux semaines.<break/>
 		</prompt>
         <goto next="recordQuestionFrench.xml"/>
 	</block>
@@ -238,8 +267,8 @@
 
    <form id="ffarmerQuestions">
 	<block>
-		<prompt>
-		  Here a recording is played of pressing questions <break/>
+		<prompt xml:lang="fr-fr">
+		  Ici, un enregistrement est diffusé des questions pressantes. La communauté agricole apprécie vos réponses ! <break/>
 		</prompt>
 		<goto next= "https://ict4d.altervista.org/French/Questions/play.php"/>
     </block>
