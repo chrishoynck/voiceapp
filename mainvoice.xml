@@ -27,7 +27,7 @@
 		<prompt>
 		   here an audio is played with information about the sales <break/>
 		</prompt>
-		<goto next="#englishPrompt" />
+		<goto next="https://ict4d.altervista.org/English/Sales/play.php" />
 	</block>
    </form>
 
@@ -176,7 +176,7 @@
 		<prompt xml:lang="fr-fr">
 		   Ici, un enregistrement audio devrait être diffusé avec des informations sur les ventes. <break/>
 		</prompt>
-		<goto next="#frenchPrompt" />
+		<goto next="https://ict4d.altervista.org/French/Sales/play.php" />
 	</block>
    </form>
 
