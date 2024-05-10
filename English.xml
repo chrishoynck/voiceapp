@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+
+ <!-- English -->
+   <menu id="englishPrompt" dtmf="true">
+      	<prompt>
+		You've entered the English menu. For providing farmers input or receiving farmers information, press 1. For receiving sales information, press 2
+        </prompt>
+	    <choice next="#efarmerMenu"/>
+	    <choice next="#eSalesForm"/>
+   </menu>
+
+   <form id="eSalesForm">
+	<block> 
+		<prompt>
+		   here an audio is played with information about the sales <break/>
+		</prompt>
+		<goto next="https://ict4d.altervista.org/English/Sales/play.php" />
+	</block>
+   </form>
+
+   <menu id="efarmerMenu" dtmf="true">
+	<prompt>
+	   You've entered the farmers menu providing different types of information, or for submitting answers and questions to the platform. 
+       Press 1 for weather information. 
+       Press 2 for general farming information.
+       Press 3 for submitting sales information. 
+	   Press 4 for submitting or hearing answers or questions.
+	   Press 5 to return to the previous menu.
+    </prompt>
+	<choice next="#eWeather"/>
+	<choice next="#eGeneral"/>
+	<choice next="#eSales"/>
+	<choice next="#equestionPlatform"/>
+	<choice next="#englishPrompt"/>
+    </menu>
+
+	<menu id="equestionPlatform" dtmf="true">
+		<prompt>
+		You've entered the menu for farmer questions and answers concerning the artemesia plant. 
+		Press 1 for answers and tips to last weeks questions.
+        Press 2 for asking a pressing question about the farming of artemesia plants to other farmers. 
+        Press 3 for helping other farmers with answering pressing questions. 
+		Press 4 to return to the previous menu.
+		</prompt>
+	    <choice next="#eAnswers"/>
+		<choice next="#eQuestions"/>
+    	<choice next="#efarmerQuestions"/>
+		<choice next="#efarmerMenu"/>
+	</menu>
+
+   <form id="eWeather">
+	<block> 
+		<prompt>
+		 here information about the weather in Bamako is provided<break/>
+		</prompt>
+		<goto next= "https://ict4d.altervista.org/weather.php"/>
+	</block>
+   </form>
+
+   <menu id="eGeneral" dtmf="true">
+		<prompt>
+		  This is a menu for general information about the production and farmer techniques for growing and planting the artemesia seeds. 
+          Press 1 for information about best practices to grow artemesia. Press 2 for information about the chemicals to use. 
+          Press 3 to return to the main menu <break/>
+		</prompt>
+		<choice next="#egrowingPlant"/>
+	    <choice next="#echemicals"/>
+	    <choice next="#efarmerMenu"/>
+   </menu>
+
+   <form id="egrowingPlant">
+	<block> 
+		<prompt>
+		  This is information on how to grow the plant, providing basic steps and best practices and products<break/>
+		</prompt>
+		<goto next="#eGeneral"/>
+	</block>
+   </form>
+
+   <form id="echemicals">
+	<block> 
+		<prompt>
+		    This is information about what chemicals to use, and what are dangerous with some simple considerations. <break/>
+		</prompt>
+		<goto next="#eGeneral"/>
+	</block>
+   </form>
+
+   <form id="eAnswers">
+	<block> 
+		<prompt>
+		  Here a recording is played of answers to previous questions, we hope these answers resolve your problem!<break/>
+		</prompt>
+		<goto next= "https://ict4d.altervista.org/English/Answers/play.php"/>
+	</block>
+   </form>
+
+   <form id="eQuestions">
+	<block> 
+		<prompt>
+		   Here a recording will be made of your pressing question, we hope to provide answers within 2 weeks <break/>
+		</prompt>
+        <goto next="recordQuestion.xml"/>
+	</block>
+   </form>
+
+   <form id="efarmerQuestions">
+	<block>
+		<prompt>
+		  Here a recording is played of pressing questions, the farmer community appreciates your knowledge sharing! <break/>
+		</prompt>
+		<goto next= "https://ict4d.altervista.org/English/Questions/play.php"/>
+    </block>
+	</form>
+
+	<form id="eanswerto">
+    <field name="answer">
+        <prompt>
+		  Press 1 to answer one of the questions. Press 2 to listen to the questions again. Press 3 to return to the previous menu. 
+        </prompt>
+        <grammar mode="dtmf" root="acc">
+                <rule id="acc" scope="public">
+                    <one-of>
+                        <item>1</item>
+                        <item>2</item>
+                        <item>3</item>
+                    </one-of>
+                </rule>
+        </grammar> 
+    </field>
+    <filled>
+            <if cond="answer == 1">
+                <goto next="recordAnswer.xml"/>
+            <elseif cond="answer == 2"/>
+                <goto next="#equestionPlatform"/>
+            <elseif cond="answer == 3"/>
+                <goto next="#efarmerMenu"/>
+            </if>
+    </filled>
+   </form>
+
+   <form id="eSales">
+	<block> 
+		<prompt>
+		  A recording will be made stating the sales information of your farm. This includes information
+          about the stock of the artemesia, the price, and the location of the farm. <break/>
+		</prompt>
+		<goto next="recordSale.xml" />
+	</block>
+   </form>
+
+</vxml>
