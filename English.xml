@@ -138,16 +138,16 @@
 		<if cond="answer == 1">
 			<assign name="selectedOption" expr="answer"/>
 			<goto next="recordAnswer.xml"/>
-		<elseif cond="answer == 2">
+		<elseif cond="answer == 2"/>
 			<assign name="selectedOption" expr="answer"/>
 			<goto next="recordAnswer.xml"/>
-		<elseif cond="answer == 3">
+		<elseif cond="answer == 3"/>
 			<assign name="selectedOption" expr="answer"/>
 			<goto next="recordAnswer.xml"/>
-		<elseif cond="answer == 4">
+		<elseif cond="answer == 4"/>
 			<assign name="selectedOption" expr="answer"/>
 			<goto next="recordAnswer.xml"/>
-		<elseif cond="answer == 5">
+		<elseif cond="answer == 5"/>
 			<assign name="selectedOption" expr="answer"/>
 			<goto next="recordAnswer.xml"/>
 		<elseif cond="answer == 6"/>
