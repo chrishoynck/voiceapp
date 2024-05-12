@@ -136,7 +136,7 @@
         </grammar> 
     </field>
     <filled>
-        	<if cond="answer >= 1 and answer <= 5">
+        	<if cond="answer == 1">
             	<goto next="recordAnswer.xml">
                 	<param name="selectedOption" expr="answer" />
             	</goto>
