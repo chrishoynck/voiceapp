@@ -62,7 +62,6 @@
 
    <menu id="eGeneral" dtmf="true">
 		<prompt>
-		  This is a menu for general information about the production and farmer techniques for growing and planting the artemesia seeds. 
           Press 1 for information about best practices to grow artemesia. Press 2 for information about the chemicals to use. 
           Press 3 to return to the main menu <break/>
 		</prompt>
@@ -92,7 +91,7 @@
    <form id="eAnswers">
 	<block> 
 		<prompt>
-		  Here a recording is played of answers to previous questions, we hope these answers resolve your problem!<break/>
+		  Here are the answers to previous questions <break/>
 		</prompt>
 		<goto next= "https://ict4d.altervista.org/English/Answers/play.php"/>
 	</block>
@@ -110,7 +109,7 @@
    <form id="efarmerQuestions">
 	<block>
 		<prompt>
-		  Here a recording is played of pressing questions, the farmer community appreciates your knowledge sharing! <break/>
+		  Here the pressing questions <break/>
 		</prompt>
 		<goto next= "https://ict4d.altervista.org/English/Questions/play.php"/>
     </block>
@@ -137,25 +136,21 @@
     </field>
     <filled>
 		<if cond="answer == 1">
-				<assign name="selectedOption" expr="answer"/>
-				<goto next="recordAnswer.xml"/>
-		<!--<elseif cond="answer == 2">
-			<goto next="recordAnswer.xml">
-				<param name="selectedOption" expr="answer" />
-			</goto>
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswer.xml"/>
+		<elseif cond="answer == 2">
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswer.xml"/>
 		<elseif cond="answer == 3">
-			<goto next="recordAnswer.xml">
-				<param name="selectedOption" expr="answer" />
-			</goto>
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswer.xml"/>
 		<elseif cond="answer == 4">
-			<goto next="recordAnswer.xml">
-				<param name="selectedOption" expr="answer" />
-			</goto>
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswer.xml"/>
 		<elseif cond="answer == 5">
-			<goto next="recordAnswer.xml">
-				<param name="selectedOption" expr="answer" />
-			</goto>
-		<elseif cond="answer == 6"/> -->
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswer.xml"/>
+		<elseif cond="answer == 6"/>
 			<goto next="#equestionPlatform"/>
 		<elseif cond="answer == 7"/>
 			<goto next="#efarmerMenu"/>
