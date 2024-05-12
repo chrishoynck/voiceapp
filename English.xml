@@ -140,7 +140,7 @@
 			<goto next="recordAnswer.xml">
 				<param name="selectedOption" expr="answer" />
 			</goto>
-		<elseif cond="answer == 2">
+		<!--<elseif cond="answer == 2">
 			<goto next="recordAnswer.xml">
 				<param name="selectedOption" expr="answer" />
 			</goto>
@@ -156,7 +156,7 @@
 			<goto next="recordAnswer.xml">
 				<param name="selectedOption" expr="answer" />
 			</goto>
-		<elseif cond="answer == 6"/>
+		<elseif cond="answer == 6"/> -->
 			<goto next="#equestionPlatform"/>
 		<elseif cond="answer == 7"/>
 			<goto next="#efarmerMenu"/>
