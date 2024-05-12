@@ -137,9 +137,10 @@
     </field>
     <filled>
 		<if cond="answer == 1">
-			<submit next="recordAnswer.xml" method="post">
-                <param name="selectedOption" expr="answer" />
-            </submit>
+			<goto next="recordAnswer.xml">
+					<assign name="session.selectedOption" expr="'answer'"/>
+			</goto>
+
 		<!--<elseif cond="answer == 2">
 			<goto next="recordAnswer.xml">
 				<param name="selectedOption" expr="answer" />

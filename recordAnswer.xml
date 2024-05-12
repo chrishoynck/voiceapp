@@ -2,7 +2,7 @@
 <vxml version = "2.1">
     <form id="record">
         <record name="message" beep="true" maxtime="60s">
-            <prompt> option <value expr="selectedOption"/>. Please leave your answer after the beep, stating the question number for this answer first, then press any key.</prompt>
+            <prompt> option <value expr="session.selectedOption"/>. Please leave your answer after the beep, stating the question number for this answer first, then press any key.</prompt>
         </record>
         <block>
             <prompt>Here's what you've recorded <value expr="message"/><break/></prompt>
