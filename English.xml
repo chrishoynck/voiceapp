@@ -137,9 +137,9 @@
     </field>
     <filled>
 		<if cond="answer == 1">
-			<goto next="recordAnswer.xml">
-				<param name="selectedOption" expr="answer" />
-			</goto>
+			<submit next="recordAnswer.xml" method="post">
+                <param name="selectedOption" expr="answer" />
+            </submit>
 		<!--<elseif cond="answer == 2">
 			<goto next="recordAnswer.xml">
 				<param name="selectedOption" expr="answer" />
