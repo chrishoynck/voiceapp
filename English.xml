@@ -137,7 +137,7 @@
     </field>
     <filled>
 		<if cond="answer == 1">
-				<assign name="selectedOption" expr="'answer'"/>
+				<assign name="selectedOption" expr="answer"/>
 				<goto next="recordAnswer.xml"/>
 		<!--<elseif cond="answer == 2">
 			<goto next="recordAnswer.xml">
