@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vxml version = "2.1" application="mainvoice.vxml">
+<vxml version = "2.1" application="mainvoice.xml">
     <form id="record">
         <record name="message" beep="true" maxtime="60s">
             <prompt> option <value expr="selectedOption"/>. Please leave your answer after the beep, stating the question number for this answer first, then press any key.</prompt>
