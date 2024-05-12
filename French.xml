@@ -22,13 +22,13 @@
    <menu id="ffarmerMenu" dtmf="true">
 	<prompt xml:lang="fr-fr">
 	Bienvenue dans le menu agricole offrant différents types d'informations, ou pour soumettre des réponses et des questions à la plateforme.
-	Appuyez sur 1 pour obtenir des informations météorologiques.
-	Appuyez sur 2 pour des informations générales sur l'agriculture.
-	Appuyez sur 3 pour soumettre des informations de vente.
-	Appuyez sur 4 pour soumettre ou écouter des réponses ou des questions.
-	Appuyez sur 5 pour revenir au menu précédent.
+	 <!--Appuyez sur 1 pour obtenir des informations météorologiques.-->
+	Appuyez sur 1 pour des informations générales sur l'agriculture.
+	Appuyez sur 2 pour soumettre des informations de vente.
+	Appuyez sur 3 pour soumettre ou écouter des réponses ou des questions.
+	Appuyez sur 4 pour revenir au menu précédent.
     </prompt>
-	<choice next="#fWeather"/>
+	 <!--<choice next="#fWeather"/>-->
 	<choice next="#fGeneral"/>
 	<choice next="#fSales"/>
 	<choice next="#fquestionsPlatform"/>
@@ -50,7 +50,7 @@
 	</menu>
 
 
-   <form id="fWeather">
+   <!-- <form id="fWeather">
 	<block> 
 		<prompt xml:lang="fr-fr">
 		Voici des informations sur la météo à Bamako. <break/>
@@ -58,7 +58,7 @@
 		<goto next= "https://ict4d.altervista.org/weather_french.php"/>
 	</block>
    </form>
-
+	-->
    <menu id="fGeneral" dtmf="true">
 		<prompt xml:lang="fr-fr">
 		  Ceci est un menu pour des informations générales sur la production et les techniques agricoles pour la culture et la plantation des graines d'artémisia. Appuyez sur 1 pour des informations sur les meilleures pratiques pour cultiver l'artémisia. Appuyez sur 2 pour des informations sur les produits chimiques à utiliser. Appuyez sur 3 pour revenir au menu principal.<break/>

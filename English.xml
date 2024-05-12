@@ -22,13 +22,13 @@
    <menu id="efarmerMenu" dtmf="true">
 	<prompt>
 	   You've entered the farmers menu providing different types of information, or for submitting answers and questions to the platform. 
-       Press 1 for weather information. 
-       Press 2 for general farming information.
-       Press 3 for submitting sales information. 
-	   Press 4 for submitting or hearing answers or questions.
-	   Press 5 to return to the previous menu.
+       <!-- Press 1 for weather information. -->
+       Press 1 for general farming information.
+       Press 2 for submitting sales information. 
+	   Press 3 for submitting or hearing answers or questions.
+	   Press 4 to return to the previous menu.
     </prompt>
-	<choice next="#eWeather"/>
+	 <!--<choice next="#eWeather"/>-->
 	<choice next="#eGeneral"/>
 	<choice next="#eSales"/>
 	<choice next="#equestionPlatform"/>
@@ -49,6 +49,7 @@
 		<choice next="#efarmerMenu"/>
 	</menu>
 
+	<!-- 
    <form id="eWeather">
 	<block> 
 		<prompt>
@@ -57,6 +58,7 @@
 		<goto next= "https://ict4d.altervista.org/weather.php"/>
 	</block>
    </form>
+	-->
 
    <menu id="eGeneral" dtmf="true">
 		<prompt>
@@ -117,21 +119,28 @@
 	<form id="eanswerto">
     <field name="answer">
         <prompt>
-		  Press 1 to answer one of the questions. Press 2 to listen to the questions again. Press 3 to return to the previous menu. 
+		  Press the number of the question you want to answer. Press 6 to listen to the questions again. Press 7 to return to the previous menu. 
         </prompt>
         <grammar mode="dtmf" root="acc">
                 <rule id="acc" scope="public">
-                    <one-of>
-                        <item>1</item>
-                        <item>2</item>
-                        <item>3</item>
-                    </one-of>
+					<one-of>
+						<item>1</item>
+						<item>2</item>
+						<item>3</item>
+						<item>4</item>
+						<item>5</item>
+						<item>6</item>
+						<item>7</item>
+					</one-of>
                 </rule>
         </grammar> 
     </field>
     <filled>
-            <if cond="answer == 1">
-                <goto next="recordAnswer.xml"/>
+        <if cond="answer >= 1 and answer <= 5">
+            <goto next="recordAnswer.xml">
+                <param name="selectedOption" expr="answer" />
+            </goto>
+                <!-- <goto next="recordAnswer.xml"/>-->
             <elseif cond="answer == 2"/>
                 <goto next="#equestionPlatform"/>
             <elseif cond="answer == 3"/>
