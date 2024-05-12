@@ -2,7 +2,7 @@
 <vxml version = "2.1" application="mainvoice.xml">
     <form id="record">
         <record name="message" beep="true" maxtime="60s">
-            <prompt> option <value expr="selectedOption"/>. Please leave your answer after the beep, stating the question number for this answer first, then press any key.</prompt>
+            <prompt>Please leave your answer after the beep to answer the question number <value expr="selectedOption"/>, then press any key.</prompt>
         </record>
         <block>
             <prompt>Here's what you've recorded <value expr="message"/><break/></prompt>
@@ -24,11 +24,11 @@
         <filled>
             <if cond="accept == 1">
                 <prompt> Thank you so much for helping others, good farming!</prompt>
-                <submit next="https://ict4d.altervista.org/English/NewRecords/record_answer.php" enctype="multipart/form-data" method="post"/>
+                <submit next="https://ict4d.altervista.org/English/NewRecords/record_answer.php"  namelist="selectedOption message" enctype="multipart/form-data" method="post"/>
             <elseif cond="accept == 2"/>
                 <goto next="#record"/>
             <elseif cond="accept == 3"/>
-                <goto next="mainvoice.xml#efarmerMenu"/>
+                <goto next="English.xml#efarmerMenu"/>
             </if>
         </filled>
     </form>
