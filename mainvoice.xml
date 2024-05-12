@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
+   <var name="selectedOption" />
    <menu id="languageChoice" dtmf="true">
       <prompt>
 	  	 Welcome to artemisia VoiceNet, this is an information platform about artemisia.

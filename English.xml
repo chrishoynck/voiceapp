@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vxml version="2.1">
+<vxml version="2.1" application="mainvoice.vxml">
 
  <!-- English -->
    <menu id="englishPrompt" dtmf="true">
@@ -137,10 +137,8 @@
     </field>
     <filled>
 		<if cond="answer == 1">
-			<goto next="recordAnswer.xml">
-					<assign name="session.selectedOption" expr="'answer'"/>
-			</goto>
-
+				<assign name="selectedOption" expr="'answer'"/>
+				<goto next="recordAnswer.xml"/>
 		<!--<elseif cond="answer == 2">
 			<goto next="recordAnswer.xml">
 				<param name="selectedOption" expr="answer" />
