@@ -3,6 +3,7 @@
 
  <!-- English -->
    <menu id="englishPrompt" dtmf="true">
+   <!-- Menu seperating the farmer and buyer stakeholders-->
       	<prompt>
 		You've entered the English menu. For providing farmers input or receiving farmers information, press 1. For receiving sales information, press 2
         </prompt>
@@ -11,6 +12,7 @@
    </menu>
 
    <form id="eSalesForm">
+   <!-- Information is played, previously obtained by the application about sales information: stock, location and price-->
 	<block> 
 		<prompt>
 		   here an audio is played with information about the sales <break/>
@@ -20,15 +22,16 @@
    </form>
 
    <menu id="efarmerMenu" dtmf="true">
+   <!-- This menu seperates the question and answer, sales and general info sections.-->
 	<prompt>
 	   You've entered the farmers menu providing different types of information, or for submitting answers and questions to the platform. 
-       <!-- Press 1 for weather information. -->
+
        Press 1 for general farming information.
        Press 2 for submitting sales information. 
 	   Press 3 for submitting or hearing answers or questions.
 	   Press 4 to return to the previous menu.
     </prompt>
-	 <!--<choice next="#eWeather"/>-->
+
 	<choice next="#eGeneral"/>
 	<choice next="#eSales"/>
 	<choice next="#equestionPlatform"/>
@@ -36,6 +39,7 @@
     </menu>
 
 	<menu id="equestionPlatform" dtmf="true">
+	<!-- This menu structures the dynamic quesiton/answer side of the application, with answers to last weeks questions, asking new questions and providing answers to current answers-->
 		<prompt>
 		You've entered the menu for farmer questions and answers concerning the artemesia plant. 
 		Press 1 for answers and tips to last weeks questions.
@@ -49,18 +53,8 @@
 		<choice next="#efarmerMenu"/>
 	</menu>
 
-	<!-- 
-   <form id="eWeather">
-	<block> 
-		<prompt>
-		 here information about the weather in Bamako is provided<break/>
-		</prompt>
-		<goto next= "https://ict4d.altervista.org/weather.php"/>
-	</block>
-   </form>
-	-->
-
    <menu id="eGeneral" dtmf="true">
+   <!-- This Menu structures the more static information, providing important basic information--> 
 		<prompt>
           Press 1 for information about best practices to grow artemesia. Press 2 for information about the chemicals to use. 
           Press 3 to return to the main menu <break/>
@@ -116,6 +110,7 @@
 	</form>
 
 	<form id="eanswerto">
+	<!-- This field allows the answering of questions in a structured manner, whereby the user selects a question to answer. The processing of the recording is done in a seperate file-->
     <field name="answer">
         <prompt>
 		  Press the number of the question you want to answer. Press 6 to listen to the questions again. Press 7 to return to the previous menu. 
@@ -159,6 +154,7 @@
    </form>
 
    <form id="eSales">
+   <!-- This form records sales information, which is later offered to buyers-->
 	<block> 
 		<prompt>
 		  A recording will be made stating the sales information of your farm. This includes information

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version = "2.1" application="mainvoice.xml">
+    <!--This section creates a structure for the recording of answers to questions in French, providing the option to delete, confirm and retry the 
+    recording of a answer to one of the questions 1-5. This answer is send to a php file in Altervista, providing cloud storage in a structured manner for the recordings--> 
     <form id="record">
         <record name="message" beep="true" maxtime="60s">
             <prompt xml:lang="fr-fr">Veuillez laisser votre réponse après le bip pour répondre au numéro de question <value expr="selectedOption"/>, puis appuyez sur n'importe quelle touche.</prompt>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version = "2.1">
+     <!--This section creates a structure for the recording sales info in English, providing the option to delete, confirm and retry the 
+    recording of the info. This sales info is sent to a php file in Altervista, providing cloud storage in a structured manner for the recordings -->
     <form id="record">
         <record name="message" beep="true" maxtime="20s">
             <prompt>Please state your artemesia stock, sales and location after the beep, then press any key. </prompt>

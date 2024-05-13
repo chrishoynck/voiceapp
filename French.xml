@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1" application="mainvoice.xml">
 
-   <!-- French -->
+   <!-- French Menu-->
    <menu id="frenchPrompt" dtmf="true">
+   <!-- Menu seperating the farmer and buyer stakeholders-->
        <prompt xml:lang="fr-fr">
 		Vous êtes dans le menu francais. Pour donner des informations sur les agriculteurs ou recevoir des informations sur les agriculteurs, appuyez sur 1. Pour recevoir des informations sur les ventes, appuyez sur 2.
 	</prompt>
@@ -11,6 +12,7 @@
    </menu>
 
    <form id="fSalesForm">
+   <!-- Information is played, previously obtained by the application about sales information: stock, location and price-->
 	<block> 
 		<prompt xml:lang="fr-fr">
 		   Ici, un enregistrement audio devrait être diffusé avec des informations sur les ventes. <break/>
@@ -20,15 +22,15 @@
    </form>
 
    <menu id="ffarmerMenu" dtmf="true">
+   <!-- This menu seperates the question and answer, sales and general info sections.-->
 	<prompt xml:lang="fr-fr">
 	Bienvenue dans le menu agricole offrant différents types d'informations, ou pour soumettre des réponses et des questions à la plateforme.
-	 <!--Appuyez sur 1 pour obtenir des informations météorologiques.-->
 	Appuyez sur 1 pour des informations générales sur l'agriculture.
 	Appuyez sur 2 pour soumettre des informations de vente.
 	Appuyez sur 3 pour soumettre ou écouter des réponses ou des questions.
 	Appuyez sur 4 pour revenir au menu précédent.
     </prompt>
-	 <!--<choice next="#fWeather"/>-->
+
 	<choice next="#fGeneral"/>
 	<choice next="#fSales"/>
 	<choice next="#fquestionsPlatform"/>
@@ -36,6 +38,7 @@
     </menu>
 
 	<menu id="fquestionPlatform" dtmf="true">
+	<!-- This menu structures the dynamic quesiton/answer side of the application, with answers to last weeks questions, asking new questions and providing answers to current answers-->
 		<prompt xml:lang="fr-fr">
 		Vous avez accédé au menu des questions et réponses des agriculteurs concernant la plante artemisia.
 		Appuyez sur 1 pour obtenir des réponses et des conseils aux questions de la semaine dernière.
@@ -49,17 +52,8 @@
 		<choice next="#ffarmerMenu"/>
 	</menu>
 
-
-   <!-- <form id="fWeather">
-	<block> 
-		<prompt xml:lang="fr-fr">
-		Voici des informations sur la météo à Bamako. <break/>
-		</prompt>
-		<goto next= "https://ict4d.altervista.org/weather_french.php"/>
-	</block>
-   </form>
-	-->
    <menu id="fGeneral" dtmf="true">
+   <!-- This Menu structures the more static information, providing important basic information--> 
 		<prompt xml:lang="fr-fr">
 		  Ceci est un menu pour des informations générales sur la production et les techniques agricoles pour la culture et la plantation des graines d'artémisia. Appuyez sur 1 pour des informations sur les meilleures pratiques pour cultiver l'artémisia. Appuyez sur 2 pour des informations sur les produits chimiques à utiliser. Appuyez sur 3 pour revenir au menu principal.<break/>
 		</prompt>
@@ -114,6 +108,7 @@
 	</form>
 
 	<form id="fanswerto">
+	<!-- This field allows the answering of questions in a structured manner, whereby the user selects a question to answer. The processing of the recording is done in a seperate file-->
     <field name="answer">
         <prompt xml:lang="fr-fr">
 		   Appuyez sur le numéro de la question à laquelle vous souhaitez répondre. Appuyez sur 6 pour réécouter les questions. Appuyez sur 7 pour revenir au menu précédent.
@@ -157,6 +152,7 @@
    </form>
 
    <form id="fSales">
+   <!-- This form records sales information, which is later offered to buyers-->
 	<block> 
 		<prompt xml:lang="fr-fr">
 		  Un enregistrement sera effectué pour indiquer les informations de vente de votre ferme. Cela inclut des informations sur le stock d'artémésia, le prix, et la localisation de la ferme. <break/>

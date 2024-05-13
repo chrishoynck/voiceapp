@@ -2,6 +2,7 @@
 <vxml version="2.1">
    <var name="selectedOption" />
    <menu id="languageChoice" dtmf="true">
+   <!-- Menu seperating the English and French versions of the application-->
       <prompt>
 	  	 Welcome to artemisia VoiceNet, this is an information platform about artemisia.
          Please choose your language: Press 1 for English or 2 for French.
