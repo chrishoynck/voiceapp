@@ -1,5 +1,10 @@
 ## Artemisia VoiceNet
-Artemisia VoiceNet is a voice-based application designed for farmers in rural Mali. It serves as a platform for exchanging questions and answers, providing sales information, and accessing agricultural information about Artemisia, available in both French and English. This application is developed using VoiceXML and PHP in Visual Studio Code, with cloud-based data storage (Altervista) for recording interactions and system updates. The directory and file structure on Altervista automates the organization of content by language.
+Artemisia VoiceNet is a voice-based application designed for farmers in rural Mali. It serves as a platform for exchanging questions and answers, providing sales information, and accessing agricultural information about Artemisia, available in both French and English. This application is developed using VoiceXML and PHP in Visual Studio Code, with cloud-based data storage (Altervista) for recording interactions and system updates. The directory and file structure on Altervista automates the organization of content by language. The main application is hosted on Voxeo Evolution. Voxeo Evolution provedes the phone number and corresponding PIN to access Artemisia VoiceNet. 
+The application settings of Voxeo Evolution are the following: 
+- Application Name: ICT4D-Voice-App2
+- Forms of language it supports: Voice Phone Calls
+- Voice Application Type: Development, USA, VoiceXML, Nuance, US Development Phrophesy 19 VXML, ASR/TTS. 
+- Voice URL: https://raw.githubusercontent.com/chrishoynck/voiceapp/main/mainvoice.xml
 
 **Features:**
 
@@ -16,6 +21,7 @@ How to Use
 3. Navigate through the menu by pressing digits 1-4.
 4. You can return to the previous menu at any stage.
 5. After recording, you may confirm and end the call, remake the recording, or delete it and return to the previous menu.
+6. In case desired information is provided/gained, you can end call by hanging up.
 
 **To report bugs:** 
 
