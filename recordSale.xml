@@ -27,7 +27,7 @@
             <elseif cond="accept == 2"/>
                 <goto next="#record"/>
             <elseif cond="accept == 3"/>
-                <goto next="mainvoice.xml#efarmerMenu"/>
+                <goto next="English.xml#efarmerMenu"/>
             </if>
         </filled>
     </form>

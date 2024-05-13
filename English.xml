@@ -75,7 +75,7 @@
 		<prompt>
 		  This is information on how to grow the plant, providing basic steps and best practices and products<break/>
 		</prompt>
-		<goto next="#eGeneral"/>
+		<goto next="https://ict4d.altervista.org/English/General/play.php"/>
 	</block>
    </form>
 
@@ -84,7 +84,7 @@
 		<prompt>
 		    This is information about what chemicals to use, and what are dangerous with some simple considerations. <break/>
 		</prompt>
-		<goto next="#eGeneral"/>
+		<goto next="https://ict4d.altervista.org/English/Chemicals/play.php"/>
 	</block>
    </form>
 

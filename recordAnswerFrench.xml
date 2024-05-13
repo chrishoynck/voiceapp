@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vxml version = "2.1">
+<vxml version = "2.1" application="mainvoice.xml">
     <form id="record">
         <record name="message" beep="true" maxtime="60s">
-            <prompt xml:lang="fr-fr">Veuillez laisser votre réponse après le bip, en indiquant d'abord le numéro de question pour cette réponse, puis appuyez sur n'importe quelle touche.</prompt>
+            <prompt xml:lang="fr-fr">Veuillez laisser votre réponse après le bip pour répondre au numéro de question <value expr="selectedOption"/>, puis appuyez sur n'importe quelle touche.</prompt>
         </record>
         <block>
             <prompt xml:lang="fr-fr">Voici ce que vous avez enregistré <value expr="message"/><break/></prompt>
@@ -24,11 +24,11 @@
         <filled>
             <if cond="accept == 1">
                 <prompt xml:lang="fr-fr"> Merci beaucoup d'aider les autres, bonne agriculture !</prompt>
-                <submit next="https://ict4d.altervista.org/French/NewRecords/record_answer.php" enctype="multipart/form-data" method="post"/>
+                <submit next="https://ict4d.altervista.org/French/NewRecords/record_answer.php" namelist="selectedOption message" enctype="multipart/form-data" method="post"/>
             <elseif cond="accept == 2"/>
                 <goto next="#record"/>
             <elseif cond="accept == 3"/>
-                <goto next="mainvoice.xml#fquestionPlatform"/>
+                <goto next="French.xml#fquestionPlatform"/>
             </if>
         </filled>
     </form>

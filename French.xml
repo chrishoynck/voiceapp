@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vxml version="2.1">
+<vxml version="2.1" application="mainvoice.xml">
 
    <!-- French -->
    <menu id="frenchPrompt" dtmf="true">
@@ -116,26 +116,43 @@
 	<form id="fanswerto">
     <field name="answer">
         <prompt xml:lang="fr-fr">
-		   Appuyez sur 1 pour répondre à l'une des questions. Appuyez sur 2 pour écouter à nouveau les questions. Appuyez sur 3 pour revenir au menu précédent.
+		   Appuyez sur le numéro de la question à laquelle vous souhaitez répondre. Appuyez sur 6 pour réécouter les questions. Appuyez sur 7 pour revenir au menu précédent.
         </prompt>
         <grammar mode="dtmf" root="acc">
                 <rule id="acc" scope="public">
-                    <one-of>
-                        <item>1</item>
-                        <item>2</item>
-                        <item>3</item>
-                    </one-of>
+					<one-of>
+						<item>1</item>
+						<item>2</item>
+						<item>3</item>
+						<item>4</item>
+						<item>5</item>
+						<item>6</item>
+						<item>7</item>
+					</one-of>
                 </rule>
         </grammar> 
     </field>
     <filled>
-            <if cond="answer == 1">
-                <goto next="recordAnswerFrench.xml"/>
-            <elseif cond="answer == 2"/>
-                <goto next="#ffarmerQuestions"/>
-            <elseif cond="answer == 3"/>
-                <goto next="#fquestionPlatform"/>
-            </if>
+		<if cond="answer == 1">
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswerFrench.xml"/>
+		<elseif cond="answer == 2"/>
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswerFrench.xml"/>
+		<elseif cond="answer == 3"/>
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswerFrench.xml"/>
+		<elseif cond="answer == 4"/>
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswerFrench.xml"/>
+		<elseif cond="answer == 5"/>
+			<assign name="selectedOption" expr="answer"/>
+			<goto next="recordAnswerFrench.xml"/>
+		<elseif cond="answer == 6"/>
+			<goto next="#fquestionPlatform"/>
+		<elseif cond="answer == 7"/>
+			<goto next="#ffarmerMenu"/>
+		</if>
     </filled>
    </form>
 
