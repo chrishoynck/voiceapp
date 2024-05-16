@@ -67,7 +67,7 @@
 		<prompt xml:lang="fr-fr">
 		Ceci est une information sur la façon de cultiver la plante, fournissant des étapes de base, les meilleures pratiques et produits.<break/>
 		</prompt>
-		<goto next="#fGeneral" />
+		<goto next="https://ict4d.altervista.org/French/General/play.php"/>
 	</block>
    </form>
 
@@ -76,7 +76,7 @@
 		<prompt xml:lang="fr-fr">
 		 Ceci est une information sur les produits chimiques à utiliser, ainsi que sur ceux qui sont dangereux, avec quelques considérations simples.<break/>
 		</prompt>
-		<goto next="#fGeneral" />
+		<goto next="https://ict4d.altervista.org/French/Chemicals/play.php"/>
 	</block>
    </form>
 
