@@ -33,7 +33,7 @@
 
 	<choice next="#fGeneral"/>
 	<choice next="#fSales"/>
-	<choice next="#fquestionsPlatform"/>
+	<choice next="#fquestionPlatform"/>
 	<choice next="#frenchPrompt"/>
     </menu>
 
