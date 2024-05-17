@@ -22,7 +22,7 @@ How to Use
 3. Navigate through the menu by pressing digits 1-4.
 4. You can return to the previous menu at any menu.
 5. After recording, you may confirm and end the call, remake the recording, or delete it and return to the previous menu.
-6. In case desired information is provided/gained, you can end call by hanging up.
+6. In case desired information is provided/gained, you can exit application by ending call.
 
 **To manage application as Admin:**
 1. Browse to the [Altervista Platform](https://s514.altervista.org/lf.pl?sid=f0cab20cb59cefba62a1e91adeb17b1a)
@@ -32,7 +32,7 @@ How to Use
 
 **To report bugs:** 
 
-Bug reports will be habdled in a seperate report-bugs branch, to prevent interference with the main development of the application. 
+Bug reports will be habdled in a seperate report-bugs branch, to prevent interference with the main development of the application.The brances can be merged when the fix is completed and the main is stable.  
 
 - Go to the [Issues](https://github.com/chrishoynck/voiceapp/issues) tab.
 - Click on [New Issue](https://github.com/chrishoynck/voiceapp/issues/new/choose).
