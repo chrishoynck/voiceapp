@@ -17,8 +17,8 @@ The application settings of Voxeo Evolution are the following:
 How to Use
 
 **To interact with Artemisia VoiceNet:**
-1. Dial the designated number 800-289-5570.
-2. Enter the provided PIN 9996143150.
+1. Dial the phone number 800-289-5570 on Skype (free of charge).
+2. Enter the PIN 9996143150.
 3. Navigate through the menu by pressing digits 1-4.
 4. You can return to the previous menu at any menu.
 5. After recording, you may confirm and end the call, remake the recording, or delete it and return to the previous menu.
